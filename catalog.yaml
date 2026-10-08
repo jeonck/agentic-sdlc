@@ -1,0 +1,13 @@
+# agentic-sdlc catalog — single source of truth for the SDLC runner.
+# The sdlc-runner skill reads this at the start of every run and updates
+# last_deploy / open_incidents at the end. Fill in one service to pilot.
+services:
+  - name: pilot-service
+    repo: /path/to/repo        # TODO: CK가 실제 repo 경로로 교체
+    owner: CK
+    tier: hobby                # hobby | internal | production
+    runbook: ./runbooks/pilot-service.md
+    deps: []
+    deploy: { type: manual, notes: "TODO: 배포 방식 기입 (예: git push main → GitHub Pages)" }
+    last_deploy: null
+    open_incidents: []
